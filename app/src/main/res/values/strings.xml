@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LetterboxdList</string>
+
+    <string-array name="generos">
+        <item>Ação</item>
+        <item>Comédia</item>
+        <item>Drama</item>
+        <item>Terror</item>
+        <item>Romance</item>
+        <item>Ficção Científica</item>
+    </string-array>
+</resources>
