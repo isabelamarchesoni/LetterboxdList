@@ -4,44 +4,62 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="5dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="4dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="6dp"
         app:cardBackgroundColor="@color/card_dark"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="14dp">
+            android:padding="16dp">
+
+            <View
+                android:id="@+id/accent_bar"
+                android:layout_width="3dp"
+                android:layout_height="0dp"
+                android:background="@color/green_lb"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
 
             <TextView
                 android:id="@+id/textView_nome"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textColor="@color/text_light"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginStart="12dp"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toEndOf="@id/accent_bar"
                 app:layout_constraintEnd_toStartOf="@id/checkBox_assistido"/>
 
             <TextView
                 android:id="@+id/textView_genero"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_secondary"
-                android:textSize="13sp"
-                android:layout_marginTop="4dp"
+                android:textColor="@color/green_lb"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                android:background="@drawable/bg_genero_badge"
+                android:paddingHorizontal="8dp"
+                android:paddingVertical="3dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginStart="12dp"
                 app:layout_constraintTop_toBottomOf="@id/textView_nome"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/checkBox_assistido"/>
+                app:layout_constraintStart_toEndOf="@id/accent_bar"/>
 
             <CheckBox
                 android:id="@+id/checkBox_assistido"
@@ -49,7 +67,7 @@
                 android:layout_height="wrap_content"
                 android:text="assistido"
                 android:textColor="@color/text_secondary"
-                android:textSize="12sp"
+                android:textSize="11sp"
                 android:buttonTint="@color/green_lb"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"/>
@@ -59,16 +77,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:numStars="5"
-                android:stepSize="1"
+                android:stepSize="0.5"
                 android:rating="0"
                 android:visibility="gone"
-                android:progressTint="@color/green_lb"
+                android:progressTint="@color/yellow_star"
+                android:progressBackgroundTint="@color/divider_color"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="12dp"
                 app:layout_constraintTop_toBottomOf="@id/textView_genero"
-                app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginTop="8dp"/>
+                app:layout_constraintStart_toEndOf="@id/accent_bar"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
     </androidx.cardview.widget.CardView>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

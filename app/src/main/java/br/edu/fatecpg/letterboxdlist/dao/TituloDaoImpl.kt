@@ -1,7 +1,7 @@
 package br.edu.fatecpg.letterboxdlist.dao
 import br.edu.fatecpg.letterboxdlist.model.Titulo
 
-class TituloDaoImpl : TituloDao{
+class TituloDaoImpl : TituloDao {
     companion object {
         private val titulos: MutableList<Titulo> = mutableListOf()
     }

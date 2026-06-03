@@ -33,6 +33,8 @@ class TituloAdapter(private val titulos: MutableList<Titulo>) :
         holder.textViewGenero.text = titulo.genero
 
         holder.checkBoxAssistido.setOnCheckedChangeListener(null)
+        holder.ratingBarNota.setOnRatingBarChangeListener(null)
+
         holder.checkBoxAssistido.isChecked = titulo.isAssistido
 
         if (titulo.isAssistido) {
@@ -40,19 +42,26 @@ class TituloAdapter(private val titulos: MutableList<Titulo>) :
             holder.ratingBarNota.rating = titulo.nota.toFloat()
         } else {
             holder.ratingBarNota.visibility = View.GONE
+            holder.ratingBarNota.rating = 0f
         }
 
         holder.checkBoxAssistido.setOnCheckedChangeListener { _, isChecked ->
-            titulos[position] = titulo.copy(isAssistido = isChecked)
-            notifyItemChanged(position)
+            val pos = holder.adapterPosition
+            if (pos != RecyclerView.NO_ID.toInt()) {
+                titulos[pos] = titulos[pos].copy(isAssistido = isChecked, nota = 0.0)
+                notifyItemChanged(pos)
+            }
         }
 
-        holder.ratingBarNota.setOnRatingBarChangeListener { _, rating, _ ->
-            titulos[position] = titulos[position].copy(nota = rating.toDouble())
+        holder.ratingBarNota.setOnRatingBarChangeListener { _, rating, fromUser ->
+            if (fromUser) {
+                val pos = holder.adapterPosition
+                if (pos != RecyclerView.NO_ID.toInt()) {
+                    titulos[pos] = titulos[pos].copy(nota = rating.toDouble())
+                }
+            }
         }
     }
 
-    override fun getItemCount(): Int {
-        return titulos.size
-    }
+    override fun getItemCount(): Int = titulos.size
 }
