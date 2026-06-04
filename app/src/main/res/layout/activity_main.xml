@@ -1,152 +1,155 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/bg_dark">
+    android:background="@color/bg_dark"
+    android:rotationY="-360">
 
     <ImageView
         android:id="@+id/imageView_logo"
         android:layout_width="96dp"
         android:layout_height="96dp"
-        android:src="@drawable/letterboxdlogo"
+        android:layout_marginTop="36dp"
         android:scaleType="fitCenter"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:src="@drawable/letterboxdlogo"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="36dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView_titulo_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:letterSpacing="0.15"
         android:text="LETTERBOXD LIST"
         android:textColor="@color/text_light"
         android:textSize="22sp"
-        android:letterSpacing="0.15"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/imageView_logo"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="10dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageView_logo" />
 
     <TextView
         android:id="@+id/textView_subtitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:text="registre o que você assistiu"
         android:textColor="@color/text_secondary"
         android:textSize="13sp"
-        app:layout_constraintTop_toBottomOf="@id/textView_titulo_app"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="4dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_titulo_app" />
 
     <View
         android:id="@+id/divider"
         android:layout_width="0dp"
         android:layout_height="1dp"
-        android:background="@color/divider_color"
-        app:layout_constraintTop_toBottomOf="@id/textView_subtitulo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="24dp"
         android:layout_marginTop="24dp"
-        android:layout_marginHorizontal="24dp"/>
+        android:background="@color/divider_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView_subtitulo" />
 
     <TextView
         android:id="@+id/label_nome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="28dp"
+        android:letterSpacing="0.12"
         android:text="TÍTULO"
         android:textColor="@color/green_lb"
         android:textSize="11sp"
-        android:letterSpacing="0.12"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/divider"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="28dp"
-        android:layout_marginHorizontal="24dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider" />
 
     <EditText
         android:id="@+id/edt_nome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_edittext"
         android:hint="Nome do filme ou série"
+        android:inputType="textCapWords"
+        android:paddingStart="14dp"
+        android:paddingTop="12dp"
+        android:paddingEnd="14dp"
+        android:paddingBottom="12dp"
         android:textColor="@color/text_light"
         android:textColorHint="@color/text_secondary"
         android:textSize="15sp"
-        android:background="@drawable/bg_edittext"
-        android:paddingStart="14dp"
-        android:paddingEnd="14dp"
-        android:paddingTop="12dp"
-        android:paddingBottom="12dp"
-        android:inputType="textCapWords"
-        app:layout_constraintTop_toBottomOf="@id/label_nome"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="6dp"
-        android:layout_marginHorizontal="24dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_nome" />
 
     <TextView
         android:id="@+id/label_genero"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="18dp"
+        android:letterSpacing="0.12"
         android:text="GÊNERO"
         android:textColor="@color/green_lb"
         android:textSize="11sp"
-        android:letterSpacing="0.12"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/edt_nome"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="18dp"
-        android:layout_marginHorizontal="24dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_nome" />
 
     <Spinner
         android:id="@+id/spinner_genero"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="6dp"
         android:background="@drawable/bg_spinner"
         android:paddingStart="14dp"
-        android:paddingEnd="14dp"
         android:paddingTop="10dp"
+        android:paddingEnd="14dp"
         android:paddingBottom="10dp"
-        app:layout_constraintTop_toBottomOf="@id/label_genero"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="6dp"
-        android:layout_marginHorizontal="24dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_genero" />
 
     <Button
         android:id="@+id/btn_registrar"
         android:layout_width="0dp"
         android:layout_height="48dp"
+        android:layout_margin="24dp"
+        android:backgroundTint="@color/green_lb"
+        android:letterSpacing="0.08"
+        android:stateListAnimator="@null"
         android:text="REGISTRAR"
         android:textColor="@android:color/black"
         android:textStyle="bold"
-        android:letterSpacing="0.08"
-        android:backgroundTint="@color/green_lb"
-        android:stateListAnimator="@null"
-        app:layout_constraintTop_toBottomOf="@id/spinner_genero"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="24dp"/>
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinner_genero" />
 
     <Button
         android:id="@+id/btn_lista"
         android:layout_width="0dp"
         android:layout_height="48dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/card_dark"
+        android:letterSpacing="0.08"
+        android:stateListAnimator="@null"
+        android:strokeColor="@color/green_lb"
         android:text="VER LISTA"
         android:textColor="@color/green_lb"
         android:textStyle="bold"
-        android:letterSpacing="0.08"
-        android:backgroundTint="@color/card_dark"
-        android:stateListAnimator="@null"
-        android:strokeColor="@color/green_lb"
-        app:layout_constraintTop_toBottomOf="@id/btn_registrar"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginHorizontal="24dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_registrar" />
 </androidx.constraintlayout.widget.ConstraintLayout>
