@@ -21,7 +21,7 @@
         android:id="@+id/textView_titulo_app"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LETTERBOX LIST"
+        android:text="LETTERBOXD LIST"
         android:textColor="@color/text_light"
         android:textSize="22sp"
         android:letterSpacing="0.15"
